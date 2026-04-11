@@ -59,12 +59,12 @@ body {
 }
 
 .profile-card {
-  width: min(980px, 100%);
+  width: min(820px, 100%);
   display: grid;
-  grid-template-columns: minmax(240px, 320px) 1fr;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(180px, 230px) 1fr;
+  gap: clamp(1.75rem, 4vw, 2.75rem);
   align-items: center;
-  padding: clamp(1.5rem, 4vw, 2rem);
+  padding: clamp(1.2rem, 3vw, 1.6rem);
   border-radius: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(7, 9, 15, 0.52);
@@ -74,7 +74,7 @@ body {
 
 .portrait-wrap {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -112,14 +112,15 @@ body {
 
 h1 {
   margin: 0;
-  font-family: "Noto Serif SC", serif;
-  font-size: clamp(3rem, 9vw, 6rem);
+  font-family: "ZCOOL XiaoWei", serif;
+  font-size: clamp(2.8rem, 7.5vw, 5rem);
   line-height: 1.05;
+  letter-spacing: 0.02em;
 }
 
 .subtitle {
   margin: 1rem 0 0;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   color: var(--muted);
   letter-spacing: 0.03em;
 }
@@ -127,7 +128,7 @@ h1 {
 .note {
   margin: 1rem 0 0;
   color: rgba(244, 241, 234, 0.88);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
 .reveal {
