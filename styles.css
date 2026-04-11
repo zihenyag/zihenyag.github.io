@@ -1,0 +1,161 @@
+:root {
+  --bg: #07090f;
+  --text: #f4f1ea;
+  --muted: rgba(244, 241, 234, 0.72);
+  --line: rgba(255, 255, 255, 0.12);
+  --accent: #f2b880;
+  --accent-2: #7dd3fc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(125, 211, 252, 0.18), transparent 30%),
+    radial-gradient(circle at 75% 20%, rgba(242, 184, 128, 0.16), transparent 28%),
+    linear-gradient(180deg, #0b0f16 0%, #07090f 48%, #05070b 100%);
+  overflow: hidden;
+}
+
+.ambient {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.ambient-one {
+  width: 18rem;
+  height: 18rem;
+  background: rgba(125, 211, 252, 0.18);
+  left: -5rem;
+  top: 14rem;
+}
+
+.ambient-two {
+  width: 24rem;
+  height: 24rem;
+  background: rgba(242, 184, 128, 0.12);
+  right: -7rem;
+  top: 20rem;
+}
+
+.profile-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.profile-card {
+  width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(7, 9, 15, 0.52);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.portrait-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.portrait-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.18) 100%);
+  pointer-events: none;
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transform: scale(1.01);
+}
+
+.copy {
+  text-align: left;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-2);
+  font-size: 0.75rem;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 1rem 0 0;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+.note {
+  margin: 1rem 0 0;
+  color: rgba(244, 241, 234, 0.88);
+  font-size: 0.98rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow: auto;
+  }
+
+  .profile-shell {
+    padding: 1rem;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+    border-radius: 1.5rem;
+  }
+
+  .copy {
+    text-align: center;
+  }
+}
